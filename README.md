@@ -28,3 +28,25 @@
 ```bash
 git clone https://github.com/yourusername/DS_Flights.git
 cd DS_Flights
+```
+
+2. Create a virtual environment and activate it:
+```bash
+python -m venv env
+source env/bin/activate  # On Windows, use `env\Scripts\activate`
+```
+3 Install the required packages:
+```
+pip install -r flask_proj/requirements.txt
+```
+4 Run the Flask application:
+```
+cd flask_proj
+gunicorn --pythonpath flask_proj flask_proj.app:app --bind 0.0.0.0:$PORT
+```
+To run locally 
+```
+cd flask_proj
+python app.py
+```
+
