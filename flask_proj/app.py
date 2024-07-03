@@ -4,7 +4,7 @@ import joblib
 import pandas as pd
 
 
-model = joblib.load(r"model.joblib")
+model = joblib.load(r"flask_proj/model.joblib")
 
 app = Flask(__name__)
 
