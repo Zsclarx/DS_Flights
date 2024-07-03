@@ -5,3 +5,4 @@ joblib
 flask
 flask-wtf
 feature-engine
+gunicorn
