@@ -4,7 +4,7 @@ import joblib
 import pandas as pd
 
 
-model = joblib.load(r"C:\Users\Prakhar\OneDrive\Desktop\Prakhar\DS_Flights\flask_proj\model.joblib")
+model = joblib.load(r"model.joblib")
 
 app = Flask(__name__)
 
