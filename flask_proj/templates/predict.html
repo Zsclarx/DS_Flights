@@ -1,15 +1,87 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #222;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    .content-container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #333;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #555;
+        border-radius: 4px;
+        background-color: #444;
+        color: #fff;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .error {
+        color: #dc3545;
+        margin-top: 5px;
+    }
+
+    .message {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #28a745;
+        color: #fff;
+        border-radius: 4px;
+    }
+</style>
+
 <div class="content-container">
     <h2>Flight Price Prediction</h2>
     <p>Please fill out the form below to predict the flight price:</p>
-    
+
     <form action="" method="post">
         {{ form.hidden_tag() }}
 
         <div class="form-group">
             {{ form.airline.label }}
+            <br>
             {{ form.airline(class="form-control") }}
             {% if form.airline.errors %}
                 {% for error in form.airline.errors %}
@@ -20,6 +92,7 @@
 
         <div class="form-group">
             {{ form.dateofjoin.label }}
+            <br>
             {{ form.dateofjoin(class="form-control") }}
             {% if form.dateofjoin.errors %}
                 {% for error in form.dateofjoin.errors %}
@@ -30,6 +103,7 @@
 
         <div class="form-group">
             {{ form.source.label }}
+            <br>
             {{ form.source(class="form-control") }}
             {% if form.source.errors %}
                 {% for error in form.source.errors %}
@@ -40,6 +114,7 @@
 
         <div class="form-group">
             {{ form.destination.label }}
+            <br>
             {{ form.destination(class="form-control") }}
             {% if form.destination.errors %}
                 {% for error in form.destination.errors %}
@@ -50,6 +125,7 @@
 
         <div class="form-group">
             {{ form.dept_time.label }}
+            <br>
             {{ form.dept_time(class="form-control") }}
             {% if form.dept_time.errors %}
                 {% for error in form.dept_time.errors %}
@@ -60,6 +136,7 @@
 
         <div class="form-group">
             {{ form.arrival_time.label }}
+            <br>
             {{ form.arrival_time(class="form-control") }}
             {% if form.arrival_time.errors %}
                 {% for error in form.arrival_time.errors %}
@@ -70,6 +147,7 @@
 
         <div class="form-group">
             {{ form.duration.label }}
+            <br>
             {{ form.duration(class="form-control") }}
             {% if form.duration.errors %}
                 {% for error in form.duration.errors %}
@@ -80,6 +158,7 @@
 
         <div class="form-group">
             {{ form.total_stops.label }}
+            <br>
             {{ form.total_stops(class="form-control") }}
             {% if form.total_stops.errors %}
                 {% for error in form.total_stops.errors %}
@@ -90,6 +169,7 @@
 
         <div class="form-group">
             {{ form.additional_info.label }}
+            <br>
             {{ form.additional_info(class="form-control") }}
             {% if form.additional_info.errors %}
                 {% for error in form.additional_info.errors %}
